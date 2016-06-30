@@ -292,26 +292,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Distance" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="mg4-1t-SC0">
-                                                    <rect key="frame" x="60" y="12" width="532" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                    <connections>
-                                                        <action selector="textFieldValueChanged:" destination="nAQ-xo-Ipn" eventType="editingChanged" id="Nrq-6i-9OM"/>
-                                                    </connections>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMa-aF-ILb">
                                                     <rect key="frame" x="15" y="12" width="5" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Distance" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="mg4-1t-SC0">
+                                                    <rect key="frame" x="190" y="12" width="402" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="textFieldValueChanged:" destination="nAQ-xo-Ipn" eventType="editingChanged" id="Nrq-6i-9OM"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="mg4-1t-SC0" secondAttribute="centerY" id="Nio-8a-zWb"/>
                                                 <constraint firstItem="aMa-aF-ILb" firstAttribute="leading" secondItem="TjI-pv-YUc" secondAttribute="leadingMargin" constant="7" id="TJx-h6-vbe"/>
                                                 <constraint firstItem="mg4-1t-SC0" firstAttribute="trailing" secondItem="TjI-pv-YUc" secondAttribute="trailingMargin" id="YBf-IU-0JH"/>
-                                                <constraint firstItem="mg4-1t-SC0" firstAttribute="leading" secondItem="aMa-aF-ILb" secondAttribute="trailing" constant="40" id="oKo-F1-xja"/>
+                                                <constraint firstItem="mg4-1t-SC0" firstAttribute="leading" secondItem="aMa-aF-ILb" secondAttribute="trailing" constant="170" id="oKo-F1-xja"/>
                                                 <constraint firstAttribute="centerY" secondItem="aMa-aF-ILb" secondAttribute="centerY" id="tt4-40-ACk"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -326,27 +326,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Energy" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="uIz-gz-i5O">
-                                                    <rect key="frame" x="163" y="12" width="429" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                    <connections>
-                                                        <action selector="textFieldValueChanged:" destination="nAQ-xo-Ipn" eventType="editingChanged" id="Iki-jL-XLN"/>
-                                                    </connections>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Energy Burned" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="934-vY-CBA">
                                                     <rect key="frame" x="15" y="12" width="108" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Energy" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="uIz-gz-i5O">
+                                                    <rect key="frame" x="163" y="12" width="426" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="textFieldValueChanged:" destination="nAQ-xo-Ipn" eventType="editingChanged" id="Iki-jL-XLN"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="uIz-gz-i5O" firstAttribute="leading" secondItem="934-vY-CBA" secondAttribute="trailing" constant="40" id="3yG-cD-jUx"/>
                                                 <constraint firstAttribute="centerY" secondItem="934-vY-CBA" secondAttribute="centerY" id="GZT-aa-NsF"/>
                                                 <constraint firstAttribute="centerY" secondItem="uIz-gz-i5O" secondAttribute="centerY" id="Ma9-cr-FaD"/>
                                                 <constraint firstItem="934-vY-CBA" firstAttribute="leading" secondItem="1ZH-D7-E6G" secondAttribute="leadingMargin" constant="7" id="ega-uf-EKc"/>
-                                                <constraint firstItem="uIz-gz-i5O" firstAttribute="trailing" secondItem="1ZH-D7-E6G" secondAttribute="trailingMargin" id="vE1-hl-LBP"/>
+                                                <constraint firstItem="uIz-gz-i5O" firstAttribute="trailing" secondItem="1ZH-D7-E6G" secondAttribute="trailingMargin" constant="-3" id="vE1-hl-LBP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

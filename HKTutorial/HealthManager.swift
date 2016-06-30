@@ -144,6 +144,56 @@ class HealthManager {
       }
     })
   }
-
-
+  
+  
+  func saveRunningWorkout(startDate:NSDate , endDate:NSDate , distance:Double, distanceUnit:HKUnit , kiloCalories:Double,
+                          completion: ( (Bool, NSError!) -> Void)!) {
+    
+    // Create quantities for the distance and energy burned
+    let distanceQuantity = HKQuantity(unit: distanceUnit, doubleValue: distance)
+    let caloriesQuantity = HKQuantity(unit: HKUnit.kilocalorieUnit(), doubleValue: kiloCalories)
+    
+    // Save Running Workout
+    let workout = HKWorkout(activityType: HKWorkoutActivityType.Running, startDate: startDate, endDate: endDate, duration: abs(endDate.timeIntervalSinceDate(startDate)), totalEnergyBurned: caloriesQuantity, totalDistance: distanceQuantity, metadata: nil)
+    healthKitStore.saveObject(workout, withCompletion: { (success, error) -> Void in
+      if( error != nil  ) {
+        // Error saving the workout
+        completion(success,error)
+      }
+      else {
+        // Workout saved
+        //completion(success,nil)
+        
+        // if success, then save the associated samples so that they appear in the Health Store
+        let distanceSample = HKQuantitySample(type: HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)!, quantity: distanceQuantity, startDate: startDate, endDate: endDate)
+        let caloriesSample = HKQuantitySample(type: HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierActiveEnergyBurned)!, quantity: caloriesQuantity, startDate: startDate, endDate: endDate)
+        
+        self.healthKitStore.addSamples([distanceSample,caloriesSample], toWorkout: workout, completion: { (success, error ) -> Void in
+          completion(success, error)
+        })
+        
+      }
+    })
+  }
+  
+  // Query workouts
+  func readRunningWorkOuts(completion: (([AnyObject]!, NSError!) -> Void)!) {
+    // Build the Predicate to read only running workouts
+    let predicate = HKQuery.predicateForWorkoutsWithWorkoutActivityType(HKWorkoutActivityType.Running)
+    
+    // Build the sort descriptor to return the samples in descending order
+    let sortDescriptor = NSSortDescriptor(key:HKSampleSortIdentifierStartDate, ascending: false)
+    
+    // Build samples query
+    let sampleQuery = HKSampleQuery(sampleType: HKWorkoutType.workoutType(), predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor])
+    { (sampleQuery, results, error ) -> Void in
+      
+      if error != nil {
+        print("There was an error while reading the samples: \(error?.localizedDescription)")
+      }
+      completion(results, error)
+    }
+    // Finally. Execute the Query
+    self.healthKitStore.executeQuery(sampleQuery)
+  }
 }
